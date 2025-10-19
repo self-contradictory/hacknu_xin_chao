@@ -16,7 +16,7 @@
 ### Системные требования
 - Python 3.8+
 - Node.js 16+
-- PostgreSQL 12+
+- PostgreSQL 18+
 - Git
 
 ### API ключи
