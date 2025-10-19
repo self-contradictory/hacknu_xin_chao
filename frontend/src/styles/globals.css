@@ -1,0 +1,156 @@
+:root {
+    --bg-start: #0f1021;
+    --bg-end:   #1a1b3a;
+    --accent:   #8b5cf6;
+    --accent-2: #06b6d4;
+    --text:     #e5e7eb;
+    --muted:    #a1a1aa;
+    --card:     #111122cc;
+    --border:   #2a2b4a;
+  }
+  
+  * { 
+    box-sizing: border-box; 
+  }
+  
+  *, *::before, *::after {
+    background-color: transparent;
+  }
+  
+  html {
+    background: linear-gradient(180deg, var(--bg-start), var(--bg-end));
+    min-height: 100vh;
+  }
+  
+  html, body, #root { 
+    height: 100%; 
+    min-height: 100vh;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    color: var(--text);
+    background: radial-gradient(1200px 600px at 70% -10%, #2a1946 0%, transparent 60%),
+                linear-gradient(180deg, var(--bg-start), var(--bg-end));
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  }
+  
+  #root {
+    background: transparent;
+  }
+  
+  .app-root {
+    min-height: 100%;
+  }
+  
+  .center-wrap {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+  }
+  
+  .roles-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, minmax(260px, 420px));
+  }
+  @media (max-width: 820px) {
+    .roles-grid { grid-template-columns: 1fr; }
+  }
+  
+  .card {
+    background: linear-gradient(180deg, #141427cc, #0d0d1acc);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px;
+    backdrop-filter: blur(10px);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: #3b3c71;
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  }
+  .card h3 { margin: 0 0 8px; font-size: 22px; }
+  .card p { margin: 0 0 18px; color: var(--muted); line-height: 1.5; }
+  .card .actions { display: flex; gap: 12px; }
+  
+  .btn {
+    cursor: pointer;
+    border: 1px solid var(--border);
+    background: #0d0d1a;
+    color: var(--text);
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: transform .15s ease, border-color .2s ease, background .2s ease;
+  }
+  .btn:hover { transform: translateY(-1px); border-color: #4c4da1; }
+  .btn.primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    border: none;
+    color: white;
+  }
+  
+  .modal-backdrop {
+    position: fixed; inset: 0;
+    background: rgba(7, 7, 12, 0.6);
+    backdrop-filter: blur(6px);
+    display: grid; place-items: center;
+    padding: 20px;
+    z-index: 50;
+  }
+  .modal-card {
+    width: 100%;
+    max-width: 560px;
+    max-height: 90vh;
+    background: #0e0f20;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.45);
+    display: flex;
+    flex-direction: column;
+  }
+  .modal-head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 4px 4px 14px;
+    border-bottom: 1px solid #26274a;
+    margin-bottom: 14px;
+    flex-shrink: 0;
+  }
+  .modal-content {
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+  }
+  .modal-title { font-size: 18px; font-weight: 700; }
+  .icon-btn {
+    appearance: none; border: none; background: transparent; color: var(--muted);
+    cursor: pointer; padding: 8px; border-radius: 10px;
+  }
+  .icon-btn:hover { background: #17182e; color: var(--text); }
+  
+  .form-grid {
+    display: grid; gap: 12px;
+  }
+  .field {
+    display: grid; gap: 6px;
+  }
+  label { font-size: 12px; color: var(--muted); }
+  input, select {
+    width: 100%; padding: 12px 14px; border-radius: 12px;
+    border: 1px solid #2a2b4a; background: #0b0c1a; color: var(--text);
+  }
+  input::placeholder { color: #6b6b8e; }
+  .helper { font-size: 12px; color: var(--muted); }
+  
+  .hr {
+    height: 1px; background: #23244a; margin: 8px 0 2px;
+  }
+  
